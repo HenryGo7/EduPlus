@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Login } from '../auth/login/login';
-import { ModalService } from '../../services/modal/modal-service';
+import { ModalService } from '../../services/modal/modal.service';
 
 @Component({
   selector: 'app-header',
@@ -22,7 +22,7 @@ export class Header implements OnInit{
   }
 
   abrirLogin(){
-    this.modalService.open();
+    this.modalService.openLogin();
   }
   
 }

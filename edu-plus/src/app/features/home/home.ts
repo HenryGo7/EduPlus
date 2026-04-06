@@ -21,4 +21,8 @@ export class Home implements OnInit{
   ngOnInit(): void {
     this.listaCursos = this.homeService.getCursos();
   }
+
+  verDetalle(curso: any){
+
+  }
 }

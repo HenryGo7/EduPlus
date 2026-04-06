@@ -3,5 +3,6 @@
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 
-<app-login *ngIf="(modalService.watch$ | async) === 'open'"></app-login>
+<app-login *ngIf="(modalService.loginWatch$ | async) === 'open'"></app-login>
+<app-detalle *ngIf="modalService.detailWatch$ | async"></app-detalle>
 
