@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-terminos',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './terminos.html',
   styleUrl: './terminos.css',
 })
