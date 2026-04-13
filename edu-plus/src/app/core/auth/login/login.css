@@ -1,3 +1,7 @@
+a{
+  cursor: pointer;
+}
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -146,4 +150,57 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Recuperar Contraseña */
+
+.recover-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fff0f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+.recover-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: #ff8a9e;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f0fdf4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+.success-icon svg {
+  width: 30px;
+  height: 30px;
+  stroke: #22c55e;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 24px;
+  color: #1a4b8d;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+.back-link:hover { text-decoration: underline; }
+
+.recover-hint {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #6b7280;
 }
