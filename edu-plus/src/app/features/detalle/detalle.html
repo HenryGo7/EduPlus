@@ -2,9 +2,9 @@
   <div class="detail-card" (click)="$event.stopPropagation()">
     <button class="close-btn" (click)="cerrar()">×</button>
     
-    <div class="detail-header" [style.background-color]="curso.colorFondo">
-      <img [src]="curso.imagen" [alt]="curso.titulo">
-    </div>
+  <div class="detail-header" [ngClass]="curso.colorClase">
+    <img [src]="curso.imagen" [alt]="curso.titulo">
+  </div>
 
     <div class="detail-body">
       <span class="category-badge">{{ curso.categoria }}</span>

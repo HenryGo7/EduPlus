@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalService } from '../../../services/modal/modal-service';
 import { FormsModule } from '@angular/forms';
+import { ModalService } from '../../../services/modal/modal.service';
 
 @Component({
   selector: 'app-login',
@@ -26,6 +26,6 @@ export class Login implements OnInit{
   }
 
   cerrar(){
-    this.modal.close();
+    this.modal.closeLogin;
   }
 }

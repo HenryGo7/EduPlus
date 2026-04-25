@@ -22,12 +22,22 @@ export class ModalService {
   private loginDisplay = new BehaviorSubject<'open' | 'close'>('close');
   loginWatch$ = this.loginDisplay.asObservable();
 
-  private detailDisplay = new BehaviorSubject<any>(null);
+  private detailDisplay = new BehaviorSubject<'open' | 'close'>('close');
   detailWatch$ = this.detailDisplay.asObservable();
+
+  private selectedCurso = new BehaviorSubject<any>(null);
+  selectedCurso$ = this.selectedCurso.asObservable();
 
   openLogin() { this.loginDisplay.next('open'); }
   closeLogin() { this.loginDisplay.next('close'); }
 
-  openDetail(curso: any) { this.detailDisplay.next(curso); }
-  closeDetail() { this.detailDisplay.next(null); }
+  openDetail(curso: any) { 
+    this.selectedCurso.next(curso);
+    this.detailDisplay.next('open'); 
+  }
+  closeDetail() { 
+    console.log('Cerrando modal...');
+    this.detailDisplay.next('close'); 
+    this.selectedCurso.next(null);
+  }
 }

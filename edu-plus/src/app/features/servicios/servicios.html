@@ -15,7 +15,11 @@
                 <div class="course-info">
                     <h3>{{ curso.titulo }}</h3>
                     <p>{{ curso.categoria }}</p>
-                    <button class="btn-more" [ngClass]="curso.botonClase">Ver Más</button>
+                    <button 
+                        class="btn-more" 
+                        [ngClass]="curso.botonClase"
+                        (click)="verDetalle(curso)"
+                    >Ver Más</button>
                 </div>
             </div>
         </div>
