@@ -33,6 +33,46 @@
   gap: 3rem;
 }
 
+.quick-support {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #e4fff1 0%, #eaf9ff 100%);
+  border: 1px solid #bde7d0;
+  border-radius: 1rem;
+  padding: 0.9rem 1.1rem;
+  text-decoration: none;
+  color: #186246;
+}
+
+.quick-support:hover {
+  box-shadow: 0 8px 22px rgba(24, 98, 70, 0.15);
+}
+
+.quick-support-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #25d366;
+}
+
+.quick-support-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.quick-support-text {
+  font-size: 0.92rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #186246;
+}
+
 /* ========================
    TARJETAS INFO
 ======================== */
@@ -155,6 +195,31 @@
   background: #fff;
 }
 
+.form-group input.is-invalid,
+.form-group textarea.is-invalid {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.field-help {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #8090b0;
+}
+
+.field-error {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #d53939;
+}
+
+.submit-hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.82rem;
+  color: #6f7fa4;
+}
+
 /* ========================
    BOTÓN ENVIAR
 ======================== */
@@ -247,6 +312,47 @@
 
 .btn-link:hover {
   color: #2c3e7a;
+}
+
+.ticket-id {
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+.error-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: 0.8rem;
+}
+
+.error-box strong {
+  color: #be123c;
+}
+
+.error-box p {
+  margin: 0;
+  color: #9f1239;
+}
+
+.btn-retry {
+  background: #be123c;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-retry:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 /* ========================

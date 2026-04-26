@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Curso } from '../../core/models/home.models';
 import { HomeService } from '../../services/home/home.service';
 import { CommonModule } from '@angular/common';
-import { Detalle } from "../detalle/detalle";
 import { ModalService } from '../../services/modal/modal.service';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, Detalle],
+  imports: [CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

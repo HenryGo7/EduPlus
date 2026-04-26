@@ -17,8 +17,7 @@ import { Detalle } from "./features/detalle/detalle";
     Login,
     Detalle
 ],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  templateUrl: './app.html'
 })
 
 export class App {
