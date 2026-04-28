@@ -8,12 +8,40 @@ import { ModalService } from '../../../services/modal/modal.service';
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
-export class Login implements OnInit{
+export class Login implements OnInit {
 
-  constructor(public modal:ModalService){}
+  constructor(public modal: ModalService) {}
 
-  vistaActual: 'login' | 'recuperar' | 'emailEnviado' = 'login';
+  vistaActual: 'login' | 'recuperar' | 'emailEnviado' | 'registro' | 'registroExitoso' = 'login';
   emailRecuperacion = '';
+  mostrarPassword = false;
+  mostrarConfirm = false;
+  errorRegistro = '';
+
+  registroData = {
+    nombre: '',
+    apellidos: '',
+    email: '',
+    password: '',
+    confirmar: ''
+  };
+
+  enviarRegistro() {
+    this.errorRegistro = '';
+
+    if (this.registroData.password !== this.registroData.confirmar) {
+      this.errorRegistro = 'Las contraseñas no coinciden.';
+      return;
+    }
+
+    if (this.registroData.password.length < 8) {
+      this.errorRegistro = 'La contraseña debe tener al menos 8 caracteres.';
+      return;
+    }
+
+    // aquí tu llamada al servicio de auth/registro
+    this.vistaActual = 'registroExitoso';
+  }
 
   enviarRecuperacion() {
     if (!this.emailRecuperacion) return;
@@ -21,11 +49,9 @@ export class Login implements OnInit{
     this.vistaActual = 'emailEnviado';
   }
 
-  ngOnInit(): void {
-
+  cerrar() {
+    this.modal.closeLogin();
   }
 
-  cerrar(){
-    this.modal.closeLogin;
-  }
+  ngOnInit(): void {}
 }
