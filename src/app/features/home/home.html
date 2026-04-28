@@ -1,0 +1,34 @@
+<main class="home-container">
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Aprende nuevas habilidades desde casa</h1>
+        </div>
+        <div class="hero-bg-decoration">
+        </div>
+    </section>
+
+    <section class="courses-section">
+        <div class="section-header">
+            <hr>
+            <h2>Cursos Destacados</h2>
+            <hr>
+        </div>
+
+        <div class="courses-grid">
+            <div class="course-card" *ngFor="let curso of listaCursos">
+                <div class="course-img" [ngClass]="curso.colorClase">
+                    <img [src]="curso.imagen" [alt]="curso.titulo">
+                </div>
+                <div class="course-info">
+                    <h3>{{ curso.titulo }}</h3>
+                    <p>{{ curso.categoria }}</p>
+                    <button 
+                        class="btn-more" 
+                        [ngClass]="curso.botonClase"
+                        (click)="verDetalle(curso)"
+                        >Ver Más</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

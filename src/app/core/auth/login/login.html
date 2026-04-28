@@ -1,0 +1,57 @@
+<div class="modal-overlay" (click)="cerrar()">
+  <div class="login-card" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="cerrar()">×</button>
+
+    @if (vistaActual === 'login') {
+      <h2>Bienvenido a <span>EduPlus</span></h2>
+      <p>Ingresa para acceder a tus cursos</p>
+      <form class="login-form">
+        <input type="email" placeholder="Correo electrónico" class="login-input">
+        <input type="password" placeholder="Contraseña" class="login-input">
+        <button type="submit" class="btn-submit">Iniciar Sesión</button>
+      </form>
+      <div class="login-footer">
+        <a (click)="vistaActual = 'recuperar'" class="forgot-password">¿Olvidaste tu contraseña?</a>
+        <hr>
+        <p>¿No tienes cuenta? <a href="#" class="register-link">Regístrate</a></p>
+      </div>
+    }
+
+    @if (vistaActual === 'recuperar') {
+      <div class="recover-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+      </div>
+      <h2>¿Olvidaste tu <span>contraseña?</span></h2>
+      <p>Escribe tu correo y te enviaremos un enlace para restablecerla.</p>
+      <form class="login-form" (ngSubmit)="enviarRecuperacion()">
+        <input type="email" placeholder="Correo electrónico" class="login-input"
+          [(ngModel)]="emailRecuperacion" name="emailRecuperacion">
+        <button type="submit" class="btn-submit">Enviar enlace</button>
+      </form>
+      <button class="back-link" (click)="vistaActual = 'login'">
+        ← Volver al inicio de sesión
+      </button>
+    }
+
+    @if (vistaActual === 'emailEnviado') {
+      <div class="success-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <path d="m9 11 3 3L22 4"/>
+        </svg>
+      </div>
+      <h2>¡Revisa tu <span>correo!</span></h2>
+      <p>Te hemos enviado un enlace para restablecer tu contraseña. Puede tardar unos minutos.</p>
+      <button class="btn-submit" (click)="enviarRecuperacion()">Reenviar correo</button>
+      <p class="recover-hint">¿Volviste a recordarla?
+        <a (click)="vistaActual = 'login'" class="register-link">Inicia sesión</a>
+      </p>
+    }
+
+  </div>
+</div>
